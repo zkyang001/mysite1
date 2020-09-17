@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试网页</title>
+</head>
+<body>
+	{% for item in list %}
+		<a href="{% url 'detail' item.pk %}">{{ item.title }}</a>
+	{% endfor %}
+</body>
+</html>
