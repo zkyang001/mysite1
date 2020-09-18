@@ -1,5 +1,11 @@
 from django.contrib import admin
-from . import models
+from .models import Article
 
 # Register your models here.
-admin.site.register(models.Article)
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+	list_display = ("pk", "title", "content", "last_update_time", "author",)
+	ordering = ("pk",)
+
+# admin.site.register(models.Article, ArticleAdmin)
+
